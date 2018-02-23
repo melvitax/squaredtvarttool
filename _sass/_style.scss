@@ -1,0 +1,93 @@
+body {
+	font: normal normal 100%  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1 {
+	display: none
+}
+
+h2 {
+  font-size: 1.2em;
+  padding-top: 1em;
+  text-align: center;
+}
+
+
+/* Search Box */
+
+#searchbox {
+	background: lightgrey
+}
+#searchbox input[type="text"] {
+	width: 90%;
+	background-color: transparent;
+	margin: 0.5em 0.5em;
+	border: 0;
+	font-size: 3em;
+}
+#searchbox input[type="text"]:focus {
+	border: none;
+	outline: none;
+}
+
+/* TV Covers */
+
+#tvCovers {
+	height: 160px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+#tvCovers li {
+	width: 110px;
+	padding: 20px;
+	margin: 0;  
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	white-space: normal;
+}
+
+#tvShows {
+	padding: 20px;
+}
+
+#tvShows li {
+	cursor: pointer;
+}
+
+#tvEpisodes {
+	padding: 20px;
+}
+
+#tvEpisodes li {
+	padding: 0.5em 0;
+}
+
+#tvEpisodes .title {
+	font-weight: bold;
+}
+
+#tvEpisodes .overview {
+	color: grey;
+}
+
+#tvEpisodes .ended {
+	color: red;
+}
+
+form#authenticate {
+	max-width: #{$screen-sm-min}px;
+	margin: 0 auto;
+	padding: 15px;
+}
+form#authenticate label {
+	display: none;
+}
+form#authenticate input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}

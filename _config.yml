@@ -1,0 +1,15 @@
+title: SquaredTVArtTool
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A tool for getting Squared TV Art from iTunes and Show metadata from TVDB
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"

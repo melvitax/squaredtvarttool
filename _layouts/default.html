@@ -1,0 +1,22 @@
+---
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html>
+	<head>
+	{% include meta.html %}
+	</head>
+	<body>
+
+	{% include header.html %}
+	
+	<main class="content text" role="main">
+		<h1>{{ page.title }}</h1>
+		{{ content }}
+	</main>
+
+	{% include footer.html %}
+	{% include scripts.html %}
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+// sass-lint:disable no-duplicate-properties
+
+// Font families and default text color.
+$font-headline: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-text: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+$text-color: #000;
+$background-color: #eeeeee;
+$line-height: 1.2em;
+$base-vertical-unit: 9px;
+$base-line-multi: 3;
+$base-font-size: 18px;
+
+
+// Breakpoints
+$max-breakpoint: 1025;
+$max-line-width: 664;
+$screen-xs-min: 480;
+$screen-sm-min: 740;
+$screen-md-min: 992;
+$screen-lg-min: 1200;
+$screen-xs-max: ($screen-sm-min -1px);
+$screen-sm-max: ($screen-md-min - 1px);
+$screen-md-max: ($screen-lg-min - 1px);;
+
+// Site Nav
+$hamburger-layer-color: #000;
+$site-nav-background-color: rgb(0, 0, 0);
+$site-nav-background-color-with-alpha: rgba(0, 0, 0, .9);
+
+$border-width: 10%;
+$padding: 20px;
+
+// Mixins
+
+@function get-vw($target) {
+  $vw-context: ($max-breakpoint * .01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@mixin font-size-vw-with-breakpoint-and-fallback($size, $breakpoint, $fallback) {
+  font-size: $fallback;
+  font-size: get-vw($size);
+  @media #{"(min-width: #{$breakpoint}px)"} {
+    font-size: $size;
+  }
+}
+
+@mixin column-count($value) {
+  -moz-column-count: $value;
+  -webkit-column-count: $value;
+  column-count: $value;
+}
+
+@mixin column-gap($value) {
+  -moz-column-gap: $value;
+  -webkit-column-gap: $value;
+  column-gap: $value;
+}
+
+@mixin transition($value...) {
+  -moz-transition: $value;
+  -webkit-transition: $value;
+  transition: $value;
+}
+
+@mixin transform-origin($value) {
+  -ms-transform-origin: $value;
+  -webkit-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin transition-delay($value) {
+  -webkit-transition-delay: $value;
+  transition-delay: $value;
+}
+
+@mixin transform($value) {
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  -webkit-transform: $value;
+  transform: $value;
+}
+
+@mixin box-shadow($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin inner-box-shadow($value) {
+  -moz-box-shadow: inset $value;
+  -webkit-box-shadow: inset $value;
+  box-shadow: inset $value;
+}
+
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin user-select($value) {
+  -khtml-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  -webkit-user-select: $value;
+  user-select: $value;
+}
+
+@mixin gradient-vertical($c1, $c2) {
+  background: $c2;
+  background: -moz-linear-gradient(top, $c1, $c2);
+  background: -webkit-linear-gradient(top, $c1, $c2);
+  background: linear-gradient(to bottom, $c1, $c2);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$c1}', endColorstr='#{$c2}',GradientType=0 );
+}
+
+
+@mixin blur($value) {
+  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='#{$value}'%20/></filter></svg>#blur");
+  -webkit-filter: blur($value);
+  -ms-filter: blur($value);
+  -o-filter: blur($value);
+  filter: blur($value);
+}
